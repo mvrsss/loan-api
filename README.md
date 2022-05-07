@@ -22,6 +22,7 @@ $ go get github.com/spf13/viper
 ## API
 **/user/register**
 * ```POST```: Register client
+
 Request format:
 ```
 curl --request POST \
