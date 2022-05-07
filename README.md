@@ -45,6 +45,7 @@ Response format:
  
 **/user/login**
 * ```GET```: Login
+
 Request format:
 ```
 curl --request GET \
@@ -65,6 +66,7 @@ Response format:
 
 **/user/authorized/updatebalance/**
 * ```POST```: Updates balance
+
 Request format:
 ```
 curl -X POST http://localhost:8080/user/authorized/updatebalance\
@@ -87,6 +89,7 @@ Response format:
 
 **/user/authorized/loanrequest/**
 * ```POST```: Creates new loan requests
+
 Request format:
 ```
 curl -X POST http://localhost:8080/user/authorized/loanrequest\
@@ -109,6 +112,7 @@ Response format:
 
 **/user/authorized/getuserloan/**
 * ```GET```: Gets all loan records of the given user
+
 Request format:
 ```
 curl -X POST http://localhost:8080/user/authorized/getuserloan\
