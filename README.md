@@ -17,6 +17,9 @@ $ go get github.com/dgrijalva/jwt-go
 
 # Download Viper
 $ go get github.com/spf13/viper
+
+# Run
+$ docker-compose -f docker-compose.yml up
 ```
 
 ## API
