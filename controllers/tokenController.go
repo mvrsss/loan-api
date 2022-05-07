@@ -19,7 +19,6 @@ func GetToken(ctx *gin.Context) {
 		ctx.AbortWithError(http.StatusBadRequest, err)
 		return
 	}
-	// check if email exists and password is correct
 	user = ValidateUser(ctx, request.PhoneNumber, request.Password)
 	ctx.JSON(http.StatusOK, gin.H{"token": user.Token, "uid": user.UID})
 }
