@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=dev
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+  server:
+    container_name: bank-api
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    networks:
+      - default
+    ports:
+    - '8080:8080'
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: postgres
+    links:
+      - db
+volumes:
+  db:
+    driver: local
